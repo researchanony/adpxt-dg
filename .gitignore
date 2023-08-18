@@ -113,4 +113,3 @@ wandb/
 ignore/
 tsne/
 data/
-*.zip
