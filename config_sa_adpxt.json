@@ -1,0 +1,92 @@
+{
+  "project_name": "DGSP",
+  "config_name": "config_nli_adpxt.json",
+  "job_name": {
+    "name": [
+      "fewshot40-dvd-adpxt-s5"
+    ]
+  },
+  "arch": {
+    "plm": "roberta-base",
+    "tokenizer": "roberta-base"
+  },
+  "train_type": "adpxt",
+  "template": "type0",
+  "hyperparam": {
+    "global_length": [
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "context_length": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "alpha": 0.1,
+    "drop_out": 0.1
+  },
+  "seed": [
+    5
+  ],
+  "shots": 320,
+  "task": "sa",
+  "freeze_plm": true,
+  "adversarial": true,
+  "data_loader": {
+    "dataset": "sa",
+    "args": {
+      "training_setting": "fewshot",
+      "source_domains": [
+        "book",
+        "electronics",
+        "kitchen"
+      ],
+      "target_domain": "dvd",
+      "data_dir": "data/TextClassification/amazonmulti",
+      "batch_size": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "dev_batch_size": 16,
+      "shuffle": true
+    }
+  },
+  "optimizer": {
+    "type": "adamw",
+    "args": {
+      "model_lr": [
+        1e-2,
+        1e-2,
+        1e-2,
+        1e-2,
+        1e-2
+      ],
+      "disc_lr": [
+        1e-2,
+        1e-2,
+        1e-2,
+        1e-2,
+        1e-2
+      ],
+      "weight_decay": 1e-2
+    }
+  },
+  "lr_scheduler": {
+    "type": "linear",
+    "args": {
+      "warm_up": 0.06
+    }
+  },
+  "trainer": {
+    "epochs": 25,
+    "early_stop": false
+  }
+}
