@@ -10,6 +10,11 @@ For reproducibility, the codes and datasets are publicly available during the re
 - pytorch
 - numpy
 
+
+## Unzip data.zip
+- replace sentiment analysis dataset to data/TextClassification/
+- replace Natural Language Inference dataset to data/NLI/
+
 ```
 pip install -r requirement.txt
 ```

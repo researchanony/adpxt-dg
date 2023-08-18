@@ -112,4 +112,3 @@ __MACOSX/
 wandb/
 ignore/
 tsne/
-data/
