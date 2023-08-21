@@ -16,10 +16,6 @@ For reproducibility, the codes and datasets are publicly available during the re
 ## Requirements
 
 ```
-python
-torch
-transformers
-or
 pip install -r requirement.txt
 ```
 
